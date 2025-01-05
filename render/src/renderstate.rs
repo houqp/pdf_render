@@ -309,7 +309,8 @@ impl<'a, R: Resolve, B: Backend> RenderState<'a, R, B> {
             Op::TextFont { ref name, size } => {
                 let font = match self.resources.fonts.get(name) {
                     Some(font_ref) => {
-                        self.backend.get_font(font_ref, self.resolve)?
+                        let font = font_ref.load(self.resolve)?;
+                        self.backend.get_font(&font, self.resolve)?
                     },
                     None => None
                 };
