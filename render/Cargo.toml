@@ -27,7 +27,7 @@ log = "0.4"
 font = { git = "https://github.com/pdf-rs/font" }
 pdf_encoding = "0.4"
 itertools = "*"
-image = "0.24.2"
+image = "0.25"
 instant = "*"
 custom_debug_derive = "*"
 globalcache = { version = "0.3", features = ["sync"] }
